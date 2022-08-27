@@ -1,0 +1,51 @@
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.user {
+  display: flex;
+  justify-content: space-between;
+  width: 450px;
+  min-height: 120px;
+  margin: 20px 30px 7px 30px;
+  border: 2px solid rgb(5, 5, 5);
+  border-radius: 10px;
+  padding: 5px;
+  box-shadow: 5px 3px 2px 3px gray;
+}
+.user_img {
+  width: 120px;
+  border-radius: 7px;
+  border: 2px solid black;
+}
+
+.user_first_name {
+  display: flex;
+  font-size: 20px;
+  align-items: center;
+}
+
+.button_wrapper {
+  display: flex;
+  align-items: flex-end;
+}
+
+.button_more {
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  font-size: 10px;
+  height: 20px;
+  border: 1.5px solid rgb(189, 188, 188);
+  cursor: pointer;
+}
+
+.button_more_active {
+  background-color: rgb(204, 199, 199);
+}
+
+.user_wrapper {
+  /* display: flex; */
+  max-height: 300px;
+}

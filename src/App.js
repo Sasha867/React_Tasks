@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import { User } from "./components/User/User";
+import styles from "./components/User/index.module.css";
 
-function App() {
+export const App = () => {
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    fetch("https://reqres.in/api/users?page=2")
+      .then((data) => data.json())
+      .then((user) => setUsers((users) => user.data));
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={styles.wrapper}>
+      {users.map((user) => (
+        <User user={user} />
+      ))}
     </div>
   );
-}
-
-export default App;
+};
