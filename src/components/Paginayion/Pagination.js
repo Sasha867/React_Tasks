@@ -4,12 +4,13 @@ import { TiArrowBack } from "react-icons/ti";
 import { TiArrowForward } from "react-icons/ti";
 
 export const Pagination = ({ choicePage, page }) => {
- 
+ console.log(page);
+     
 
   return (
     <>
       {
-        <button className={styles.btn_wrapper} onClick={choicePage}>
+        <button className={styles.btn_wrapper} onClick={()=>{choicePage(page)}}>
           {page}
         </button>
       }

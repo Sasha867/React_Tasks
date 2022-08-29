@@ -9,22 +9,21 @@ export const App = () => {
   const [isPreloader, setIsPreloader] = useState(false);
   const [users, setUsers] = useState([]);
   const [totalPages, setTotalPages] = useState(0);
-
- 
+  const [arrPages, setArrPages] = useState([]);
 
   useEffect(() => {
     setIsPreloader(true);
-    fetch(`https://reqres.in/api/users?page`)
+    fetch(`https://reqres.in/api/users?page=${totalPages}`)
       .then((data) => data.json())
       .then((user) =>
         setTimeout(() => {
           setUsers((users) => user.data);
-          // setPages((pages) => user.page);
+          setTotalPages((totalPages) => user.total_pages)
           setIsPreloader(false);
         }, 1000)
       );
   }, []);
-
+console.log(totalPages);
   const addUser = (event) => {
     const userData = new FormData(event.target);
     event.preventDefault();
@@ -40,14 +39,16 @@ export const App = () => {
     ]);
   };
 
-  const arr = [1, 2, 3, 4, 5];
+  // new Array(2).map((_, index)=>)
+ 
 
-  function choicePage(page) {
-    // const num = arr.map((el) => el === page);
-    // return setPages((pages) => num);
-    // console.log(pages);
+  function choicePage() {
+   
+
+   return setArrPages((arrPages)=> new Array(totalPages));
+    
   }
-
+console.log(arrPages);
   return (
     <>
       {isPreloader && <Preloaedr />}
@@ -60,8 +61,8 @@ export const App = () => {
             ))}
           </div>
           <div className={styles.pagination_wrapper}>
-            {arr.map((page) => (
-              <Pagination choicePage={choicePage} page={page} />
+            {arrPages.map((page) => (
+              <Pagination choicePage={choicePage} page={totalPages} />
             ))}
           </div>
         </div>

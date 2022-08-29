@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { memo, useState } from "react";
 import styles from "./index.module.css";
 import { UserMoreInfo } from "../AddInfo/UserMoreInfo";
 import { BiUpArrowAlt } from "react-icons/bi";
 import { FiArrowDown } from "react-icons/fi";
 
 
-export const User = ({ user,  fs}) => {
+ const UserTeamePlate = ({ user,  fs}) => {
   const [addInfo, setAddInfo] = useState(false);
   console.log(addInfo);
 console.log(1222,fs);
@@ -35,3 +35,5 @@ console.log(1222,fs);
     </div>
   );
 };
+
+export const User = memo(UserTeamePlate);
