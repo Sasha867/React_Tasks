@@ -1,6 +1,7 @@
 .wrapper {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .user {
@@ -35,10 +36,11 @@
   display: flex;
   align-items: center;
   border-radius: 5px;
-  font-size: 10px;
+  font-size: 12px;
   height: 20px;
   border: 1.5px solid rgb(189, 188, 188);
   cursor: pointer;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
 .button_more_active {
@@ -48,4 +50,10 @@
 .user_wrapper {
   /* display: flex; */
   max-height: 300px;
+}
+
+.pagination_wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
 }
